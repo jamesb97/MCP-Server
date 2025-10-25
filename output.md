@@ -4,14 +4,14 @@ Open two separate terminal tabs/windows.
 Terminal A — start the server:
 
 Use development mode (keeps logs visible):
-`cd /Users/zdravkobozhkov/Desktop/MCP
+`
 npm run dev`
 You should see a line like: MCP Server listening on port 3000
 
 Leave this terminal open.
 
 Terminal B — run the TypeScript test client:
-`cd /Users/zdravkobozhkov/Desktop/MCP
+`
 npx ts-node src/test-client.ts`
 Expected behavior:
 
