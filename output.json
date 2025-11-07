@@ -1,0 +1,38 @@
+{
+  "testingEchoTool": {
+    "echoResponse": { "message": "Hello, MCP Server!" }
+  },
+  "testingFileContentTool": {
+    "writeResponse": { "success": true },
+    "readResponse": { "content": "Hello from MCP Server!" }
+  },
+  "testingSystemInfoTool": {
+    "systemInfo": {
+      "cpu": { "cores": 14, "model": "Apple M4 Pro", "speed": 2400 },
+      "memory": {
+        "total": 25769803776,
+        "free": 131629056,
+        "used": 25638174720
+      },
+      "system": {
+        "platform": "darwin",
+        "arch": "arm64",
+        "uptime": 221218,
+        "loadAverage": [13.44091796875, 9.92431640625, 9.693359375]
+      }
+    }
+  },
+  "testingJsonValidation": {
+    "jsonValidationResult": { "isValid": true }
+  },
+  "testingJsonTransformation": {
+    "jsonTransformationResult": {
+      "result": {
+        "career": "Developer",
+        "age": 25,
+        "name": "Jack",
+        "createdAt": "2025-11-06T20:14:26.129Z"
+      }
+    }
+  }
+}

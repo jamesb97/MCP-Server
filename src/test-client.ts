@@ -77,7 +77,7 @@ async function runTests() {
       tool: "jsonProcess",
       params: {
         operation: "validate",
-        data: { name: "John", age: 30 },
+        data: { name: "Jack", career: "Developer", age: 25 },
         schema: { name: "string", age: "number" },
       },
     });
@@ -89,7 +89,7 @@ async function runTests() {
       tool: "jsonProcess",
       params: {
         operation: "transform",
-        data: { oldName: "John", age: 30 },
+        data: { oldName: "Jack", career: "Developer", age: 25 },
         transformations: [
           { operation: "rename", path: "oldName", newPath: "name" },
           {
