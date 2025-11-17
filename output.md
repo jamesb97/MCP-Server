@@ -29,3 +29,5 @@ If the server fails to stay running
 Copy the server log file (or paste the terminal output) here so I can inspect the reason it exits.
 Run a quick check to see if anything is listening on 3000:
 `lsof -i :3000`
+
+If there is output, it means something is already using that port. You can either stop that process or change the port in the server code (src/server.ts) and restart.
