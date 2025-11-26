@@ -1,0 +1,35 @@
+Connected to MCP server
+
+Testing echo tool:
+Echo response: { message: 'Hello, MCP Server!' }
+
+Testing file content tool (write):
+Write response: { success: true }
+
+Testing file content tool (read):
+Read response: { content: 'Hello from MCP Server!' }
+
+Testing system info tool:
+System info: {
+  cpu: { cores: 14, model: 'Apple M4 Pro', speed: 2400 },
+  memory: { total: 25769803776, free: 405782528, used: 25364021248 },
+  system: {
+    platform: 'darwin',
+    arch: 'arm64',
+    uptime: 1863252,
+    loadAverage: [ 15.79931640625, 17.8544921875, 18.63623046875 ]
+  }
+}
+
+Testing JSON validation:
+JSON validation result: { isValid: true }
+
+Testing JSON transformation:
+JSON transformation result: {
+  result: {
+    career: 'Developer',
+    age: 25,
+    name: 'Jack',
+    createdAt: '2025-11-25T20:21:38.635Z'
+  }
+}
