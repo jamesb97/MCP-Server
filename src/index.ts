@@ -69,7 +69,7 @@ class MCPServer {
           throw new Error(
             `Failed to list directory: ${
               error instanceof Error ? error.message : String(error)
-            }`
+            }`,
           );
         }
       },
@@ -96,7 +96,7 @@ class MCPServer {
           throw new Error(
             `Failed to search files: ${
               error instanceof Error ? error.message : String(error)
-            }`
+            }`,
           );
         }
       },
@@ -161,7 +161,7 @@ class MCPServer {
           throw new Error(
             `File operation failed: ${
               error instanceof Error ? error.message : String(error)
-            }`
+            }`,
           );
         }
       },
@@ -228,7 +228,7 @@ class MCPServer {
             ) {
               if (!value || typeof value !== "object") return false;
               return Object.entries(schemaField).every(([key, type]) =>
-                validateField(value[key], type)
+                validateField(value[key], type),
               );
             }
             return true;
@@ -298,6 +298,20 @@ class MCPServer {
       };
     }
   }
+  private async handleRequest(request: any): Promise<any> {
+    try {
+      const { method, params } = request;
+      const toolImpl = this.tools.get(method);
+      if (!toolImpl) {
+        throw new Error(`Tool ${method} not found`);
+      }
+      return await toolImpl.execute(params);
+    } catch (error) {
+      throw new Error(
+        `Invalid request: ${error instanceof Error ? error.message : String(error)}`,
+      );
+    }
+  }
 
   start() {
     const server = createServer((socket) => {
@@ -326,7 +340,7 @@ class MCPServer {
               socket.write(
                 JSON.stringify({
                   error: "Invalid message format",
-                }) + "\n"
+                }) + "\n",
               );
             }
           }
