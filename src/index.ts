@@ -39,6 +39,25 @@ interface JSONProcessParams {
   transformations?: JSONTransformation[];
 }
 
+interface SystemInfo {
+  cpu: {
+    cores: number;
+    model: string;
+    speed: number;
+  };
+  memory: {
+    total: number;
+    free: number;
+    used: number;
+  };
+  system: {
+    platform: string;
+    arch: string;
+    uptime: number;
+    loadAverage: number[];
+  };
+}
+
 class MCPServer {
   private readonly tools: Map<string, Tool> = new Map();
   private server: Server | null = null;
