@@ -112,8 +112,6 @@ async function runTests() {
   }
 }
 
-async function testTools(client: Socket) {}
-
 runTests().catch((err) => {
   console.error("Unhandled error:", err);
   process.exit(1);
